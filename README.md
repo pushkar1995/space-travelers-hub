@@ -162,7 +162,7 @@ Feel free to check the [issues page](https://github.com/pushkar1995/space-travel
 If you like my page please show your support and give this page a star!
 <br>
 <br>
-[![Star](https://img.shields.io/github/stars/agneta1991/space-traveller?style=social)](https://github.com/agneta1991/space-traveller)
+[![Star](https://github.com/pushkar1995/space-travelers-hub)]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
