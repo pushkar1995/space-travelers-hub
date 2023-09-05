@@ -37,8 +37,8 @@ const Navbar = () => {
 
             <li>
               <Link
-                to="/profile"
-                className={location.pathname === '/profile' ? 'active' : ''}
+                to="/myprofile"
+                className={location.pathname === '/myprofile' ? 'active' : ''}
               >
                 {' '}
                 Profile
