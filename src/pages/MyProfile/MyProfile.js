@@ -1,7 +1,16 @@
-import React from 'react';
+import './MyProfile.css';
 
-const MyProfile = () => (
-  <div>MyProfile</div>
+const Profile = () => (
+  <div className="main-profile-div">
+    <div className="missions-profile-div">
+      <h2>My Missions</h2>
+      <div className="content">Content</div>
+    </div>
+    <div className="rockets-profile-div">
+      <h2>My Rockets</h2>
+      <div className="content">Content</div>
+    </div>
+  </div>
 );
 
-export default MyProfile;
+export default Profile;
