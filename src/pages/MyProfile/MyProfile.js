@@ -1,3 +1,4 @@
+import RocketProfile from '../../components/RocketProfile/RocketProfile';
 import './MyProfile.css';
 
 const Profile = () => (
@@ -7,8 +8,11 @@ const Profile = () => (
       <div className="content">Content</div>
     </div>
     <div className="rockets-profile-div">
-      <h2>My Rockets</h2>
-      <div className="content">Content</div>
+      <div className="rocket-profile-div">
+        <div>
+          <RocketProfile />
+        </div>
+      </div>
     </div>
   </div>
 );
