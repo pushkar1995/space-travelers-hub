@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import Rockets from '../pages/Rockets/Rockets';
 
-jest.mock('../../redux/rocketSlice');
+jest.mock('../redux/rocketSlice');
 
 const mockStore = configureStore([]);
 
