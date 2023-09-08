@@ -25,9 +25,40 @@ function Missions() {
       </div>
     );
   }
-  console.log('=======', missions);
   return (
-    <></>
+    <table>
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody className="border border-gray-300">
+        {missions.map((mission) => (
+          <tr key={mission.mission_id}>
+            <td>{mission.mission_name}</td>
+            <td>{mission.description}</td>
+            <td><p style={{ backgroundColor: mission.reserved ? '#419bf9' : '#6d757d' }}>{mission.reserved ? 'ACTIVE MEMBER' : 'NOT A MEMBER'}</p></td>
+            <td>
+              <button
+                type="button"
+                style={{ color: mission.reserved ? 'red' : '', border: mission.reserved ? '1px solid red' : '' }}
+              >
+                Leave Mission
+              </button>
+              <button
+                type="button"
+                style={{ color: mission.reserved ? 'red' : '', border: mission.reserved ? '1px solid red' : '' }}
+              >
+                Join Mission
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }
 
