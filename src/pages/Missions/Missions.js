@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissionAsync } from '../../redux/missionSlice';
+import { fetchMissionAsync, joiningMission } from '../../redux/missionSlice';
 import './Missions.css';
 
 function Missions() {
@@ -51,6 +51,7 @@ function Missions() {
               <button
                 type="button"
                 style={{ color: mission.reserved ? 'red' : '', border: mission.reserved ? '1px solid red' : '' }}
+                onClick={() => dispatch(joiningMission(mission.mission_id))}
               >
                 Join Mission
               </button>
