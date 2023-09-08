@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { createSelector } from 'reselect';
 import axios from 'axios';
+import { createSelector } from 'reselect';
 
 const initialState = {
   rockets: [],
