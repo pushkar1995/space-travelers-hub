@@ -16,7 +16,9 @@ exports[`Rockets component renders correctly 1`] = `
       <div
         class="rockets-info"
       >
-        <h2>
+        <h2
+          class="rocket-name"
+        >
           Falcon 9
         </h2>
         <p>
