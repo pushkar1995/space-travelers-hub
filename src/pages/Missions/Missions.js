@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissionAsync } from '../../redux/missionSlice';
+import { fetchMissionAsync, joiningMission } from '../../redux/missionSlice';
 import './Missions.css';
 
 function Missions() {
@@ -40,20 +40,28 @@ function Missions() {
           <tr key={mission.mission_id}>
             <td>{mission.mission_name}</td>
             <td>{mission.description}</td>
-            <td><p style={{ backgroundColor: mission.reserved ? '#419bf9' : '#6d757d' }}>{mission.reserved ? 'ACTIVE MEMBER' : 'NOT A MEMBER'}</p></td>
             <td>
-              <button
-                type="button"
-                style={{ color: mission.reserved ? 'red' : '', border: mission.reserved ? '1px solid red' : '' }}
+              <p
+                style={{
+                  backgroundColor: mission.reserved ? '#419bf9' : '#6d757d',
+                }}
               >
-                Leave Mission
-              </button>
+                {mission.reserved ? 'ACTIVE MEMBER' : 'NOT A MEMBER'}
+              </p>
+            </td>
+            <td>
+              {!mission.reserved && (
               <button
                 type="button"
-                style={{ color: mission.reserved ? 'red' : '', border: mission.reserved ? '1px solid red' : '' }}
+                style={{
+                  color: mission.reserved ? 'red' : '',
+                  border: mission.reserved ? '1px solid red' : '',
+                }}
+                onClick={() => dispatch(joiningMission(mission.mission_id))}
               >
                 Join Mission
               </button>
+              )}
             </td>
           </tr>
         ))}
