@@ -40,6 +40,7 @@
 
 .links-ul > li > a {
   text-decoration: none;
+  color: rgb(20, 78, 225);
 }
 
 .links-ul > li > .active {
