@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissionAsync, joiningMission } from '../../redux/missionSlice';
+import { fetchMissionAsync, joiningMission, leavingMission } from '../../redux/missionSlice';
 import './Missions.css';
 
 function Missions() {
@@ -50,6 +50,18 @@ function Missions() {
               </p>
             </td>
             <td>
+              {mission.reserved && (
+              <button
+                type="button"
+                style={{
+                  color: mission.reserved ? 'red' : '',
+                  border: mission.reserved ? '1px solid red' : '',
+                }}
+                onClick={() => dispatch(leavingMission(mission.mission_id))}
+              >
+                Leave Mission
+              </button>
+              )}
               {!mission.reserved && (
               <button
                 type="button"
