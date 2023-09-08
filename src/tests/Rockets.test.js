@@ -1,56 +1,89 @@
+// import React from 'react';
+// import { render } from '@testing-library/react';
+// import { Provider } from 'react-redux';
+// import configureStore from 'redux-mock-store';
+// import Rockets from '../pages/Rockets/Rockets';
+
+// jest.mock('../redux/rocketSlice');
+
+// const mockStore = configureStore([]);
+
+// describe('Rockets Component', () => {
+//   let store;
+
+//   beforeEach(() => {
+//     store = mockStore({
+//       rockets: {
+//         status: 'succeeded',
+//         error: null,
+//       },
+//     });
+//   });
+
+//   it(' it renders loading state', () => {
+//     store = mockStore({
+//       rockets: {
+//         status: 'loading',
+//         error: null,
+//       },
+//     });
+
+//     const { container } = render(
+//       <Provider store={store}>
+//         <Rockets />
+//       </Provider>,
+//     );
+
+//     expect(container).toMatchSnapshot();
+//   });
+
+//   it('renders error state', () => {
+//     store = mockStore({
+//       rockets: {
+//         status: 'failed',
+//         error: 'Test Error',
+//       },
+//     });
+
+//     const { container } = render(
+//       <Provider store={store}>
+//         <Rockets />
+//       </Provider>,
+//     );
+
+//     expect(container).toMatchSnapshot();
+//   });
+// });
+
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
+import { useSelector } from 'react-redux';
 import Rockets from '../pages/Rockets/Rockets';
 
-jest.mock('../redux/rocketSlice');
+// Mocking react-redux's useSelector
+jest.mock('react-redux');
 
-const mockStore = configureStore([]);
+// Mocking axios
+jest.mock('axios', () => ({
+  get: jest.fn(),
+}));
 
-describe('Rockets Component', () => {
-  let store;
-
-  beforeEach(() => {
-    store = mockStore({
-      rockets: {
-        status: 'succeeded',
-        error: null,
+test('Rockets component renders correctly', () => {
+  // Mock the useSelector behavior
+  useSelector.mockReturnValue({
+    rockets: [
+      {
+        id: 1,
+        name: 'Falcon 9',
+        description: 'A powerful rocket developed by SpaceX.',
+        flickr_images: ['image1.jpg', 'image2.jpg'],
+        reserved: false,
       },
-    });
+      // Add more mock rockets as needed
+    ],
   });
 
-  it(' it renders loading state', () => {
-    store = mockStore({
-      rockets: {
-        status: 'loading',
-        error: null,
-      },
-    });
+  const { container } = render(<Rockets />);
 
-    const { container } = render(
-      <Provider store={store}>
-        <Rockets />
-      </Provider>,
-    );
-
-    expect(container).toMatchSnapshot();
-  });
-
-  it('renders error state', () => {
-    store = mockStore({
-      rockets: {
-        status: 'failed',
-        error: 'Test Error',
-      },
-    });
-
-    const { container } = render(
-      <Provider store={store}>
-        <Rockets />
-      </Provider>,
-    );
-
-    expect(container).toMatchSnapshot();
-  });
+  expect(container).toMatchSnapshot();
 });
