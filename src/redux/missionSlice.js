@@ -31,6 +31,13 @@ const missionSlice = createSlice({
       });
     },
   },
+  leavingMission: (state, action) => {
+    const id = action.payload;
+    state.missions = state.missions.map((mission) => {
+      if (mission.mission_id !== id) return mission;
+      return { ...mission, reserved: false };
+    });
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchMissionAsync.pending, (state) => {
