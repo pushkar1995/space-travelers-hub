@@ -51,13 +51,3 @@ button {
   font-size: large;
   cursor: pointer;
 }
-
-button.leave {
-  color: red;
-  border: 1px solid red;
-}
-
-button.join {
-  color: #5b5c55;
-  border: 2px solid #5b5c55;
-}
