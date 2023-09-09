@@ -3,14 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchMissionAsync, joiningMission, leavingMission } from '../../redux/missionSlice';
 import './Missions.css';
 
-function Missions() {
+const Missions = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
   const status = useSelector((state) => state.missions.status);
   const error = useSelector((state) => state.missions.error);
 
   useEffect(() => {
-    dispatch(fetchMissionAsync());
+    if (missions.length === 0) {
+      dispatch(fetchMissionAsync());
+    }
   }, [dispatch]);
 
   if (status === 'loading') {
@@ -80,6 +82,6 @@ function Missions() {
       </tbody>
     </table>
   );
-}
+};
 
 export default Missions;
