@@ -28,5 +28,5 @@ test('Rockets component renders correctly', () => {
 
   const { container } = render(<Rockets />);
 
-  // expect(container).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
