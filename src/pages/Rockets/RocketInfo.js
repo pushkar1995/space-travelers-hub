@@ -23,7 +23,7 @@ const RocketInfo = ({
       <div>
         <img className="rockets-pictures" src={image[0]} alt="rockets-pictures" />
       </div>
-      <div className="rockets-info">
+      <article className="rockets-info">
         <h2 className="rocket-name">{name}</h2>
         <p>
           {reserved ? <span className="reservation-status">Reserved</span> : null}
@@ -36,7 +36,7 @@ const RocketInfo = ({
         >
           {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
         </button>
-      </div>
+      </article>
     </div>
   );
 };
