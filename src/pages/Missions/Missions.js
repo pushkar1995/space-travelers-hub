@@ -68,8 +68,8 @@ const Missions = () => {
               <button
                 type="button"
                 style={{
-                  color: mission.reserved ? 'red' : '',
-                  border: mission.reserved ? '1px solid red' : '',
+                  color: !mission.reserved ? '#5b5c55' : '',
+                  border: !mission.reserved ? '1px solid #5b5c55' : '',
                 }}
                 onClick={() => dispatch(joiningMission(mission.mission_id))}
               >

@@ -43,18 +43,11 @@ td p.not-member {
 }
 
 button {
-  padding: 8px 16px;
-  border: 1px solid #ccc;
+  padding: 10px 16px;
+  border: 1px solid #5b5c55;
   border-radius: 4px;
+  width: max-content;
+  align-items: center;
+  font-size: large;
   cursor: pointer;
-}
-
-button.leave {
-  color: red;
-  border: 1px solid red;
-}
-
-button.join {
-  color: red;
-  border: 1px solid red;
 }
