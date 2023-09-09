@@ -1,0 +1,53 @@
+table {
+  width: 92%;
+  margin: 5% auto;
+  border-collapse: collapse;
+}
+
+td {
+  text-align: start;
+  border: 1px solid #858484;
+  padding: 8px;
+}
+
+td:first-child {
+  font-weight: bold;
+}
+
+th {
+  font-weight: bold;
+  border: 1px solid #858484;
+  padding: 8px;
+  text-align: start;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+td p {
+  padding: 8px;
+  border-radius: 4px;
+  width: max-content;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+td p.active {
+  background-color: #419bf9;
+}
+
+td p.not-member {
+  background-color: #6d757d;
+}
+
+button {
+  padding: 10px 16px;
+  border: 1px solid #5b5c55;
+  border-radius: 4px;
+  width: max-content;
+  align-items: center;
+  font-size: large;
+  cursor: pointer;
+}
