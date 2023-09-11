@@ -68,7 +68,7 @@
 
 <br>
 
-- [Click me to view deployed project!] Will be deployed in future..
+- [Click me to view deployed project!] (https://space-traveller-hub.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
